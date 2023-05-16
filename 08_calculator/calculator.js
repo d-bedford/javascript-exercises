@@ -16,12 +16,14 @@ const sum = function(nums) {
 };
 
 const multiply = function(nums) {
-	let tot = 0;
-  for (let i = 0; i<nums.length-1; i++){
-    tot += nums[i] * nums[i+1];
-  }
-  return tot;
-};
+    let tot = 1;
+    for (let i = 0; i<nums.length; i++){
+      tot = tot* nums[i];
+      
+    }
+    return tot;
+  };
+
 
 const power = function(num1, num2) {
 	return num1 ** num2;
