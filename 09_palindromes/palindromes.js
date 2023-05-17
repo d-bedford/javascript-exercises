@@ -1,18 +1,21 @@
 const palindromes = function (string) {
     let letters_backwards = [];
     let letters = []
-
-    for (let i = string.length-1; i >= 0 ; i--){
-        if(string.charAt(i).toUpperCase() != string.charAt(i).toLowerCase()) {
-            letters_backwards.push(string.charAt(i));
+    let words_split = string.split(" ");
+    let joined_words = words_split.join("");
+    for (let i = joined_words.length; i >=0; i--){
+        if(joined_words.charAt(i).toUpperCase() != joined_words.charAt(i).toLowerCase()) {
+            letters_backwards.push(joined_words.charAt(i));
         };
     };
-    for (let i = 0; i <= string.length-1 ; i++){
-        if(string.charAt(i).toUpperCase() != string.charAt(i).toLowerCase()) {
-            letters.push(string.charAt(i));
+    for (let letter of joined_words){
+        if(letter.toUpperCase() != letter.toLowerCase()) {
+            letters.push(letter);
         };
     };
-    if (letters_backwards.join("") === letters.join("")){
+    
+    if ((letters_backwards.join("")).toLowerCase() === (letters.join("")).toLowerCase()){
+        
         return true;
     }
     else{
